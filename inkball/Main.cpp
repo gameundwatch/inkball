@@ -40,9 +40,13 @@ void Main()
 			for (auto& b2 : Balls)
 			{
 				if (b.getPos() == b2.getPos())
-				{	break;	}
+				{	continue;	}
 				b.CollisionBall(b2);
 			}
+		}
+
+		for (auto& b : Balls)
+		{
 			b.MoveBall();
 			b.DrawBall();
 		}

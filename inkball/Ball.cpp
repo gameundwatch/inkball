@@ -83,10 +83,6 @@ void Ball::CollisionBall(Ball _b)
 	if ( Vec2(Pos - _b.getPos()).length() < 20 )
 	{
 		Vel = ( Vel + ( Pos - _b.getPos() ) ).normalized();
-		Print << _b.getVel();
-		//_b.setVel( (_b.getVel() + _b.getPos() - Pos).normalized() );
-		_b.setVel(Vec2(0.0,0.0));
-		Print << _b.getVel();
 	}
 }
 
