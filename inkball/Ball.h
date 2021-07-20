@@ -6,18 +6,19 @@ class Ball
 {
 
 private:
-	Circle Body;
-	Vec2 Pos;
-	Vec2 Vel;
-	double Spd;
-	ColorF Clr;
-	// 0 = white, 1 = Orange, 2 = Blue, 3 = Green, 4 = Yellow
+	Circle Body;	// ball body
+	Vec2 Pos;		// position
+	Vec2 Vel;		// velocity (2D unit vector)
+	int Rad;		// radius
+	double Spd;		// speed
+	ColorF Clr;		// color
 
 public:
 	Ball();
 	Ball(Vec2 _p, Vec2 _v, double _s, int _c);
 	void DrawBall();
 	void MoveBall();
+	void CollisionBall(Ball b);
 
 	Vec2 getPos();
 	Vec2 getVel();

@@ -7,6 +7,7 @@ Ball::Ball()
 	Body = Circle();
 	Pos = Cursor::Pos();
 	Vel = Vec2(Random(-1.0, 1.0), Random(-1.0, 1.0));
+	Rad = 10;
 	Spd = 1.0;
 	switch (Random(0,4))	// 0 = white, 1 = Orange, 2 = Blue, 3 = Green, 4 = Yellow
 	{
@@ -37,6 +38,7 @@ Ball::Ball(Vec2 _p, Vec2 _v, double _s, int _c)
 	Body = Circle();
 	Pos = _p;
 	Vel = _v;
+	Rad = 10;
 	Spd = _s;
 
 	switch (_c)	// 0 = white, 1 = Orange, 2 = Blue, 3 = Green, 4 = Yellow
@@ -65,16 +67,27 @@ Ball::Ball(Vec2 _p, Vec2 _v, double _s, int _c)
 
 void Ball::DrawBall()
 {
-	Body.r = 10;
+	Body.r = Rad;
 	Body.setPos(Pos);
 	Body.draw(Clr).drawFrame(2, 0, ColorF(0.5, 0.5, 0.5));
 }
 
 void Ball::MoveBall()
 {
-	// Print << U"call";
 	Vel = Vel.normalized();
 	Pos += Vel * Spd;
+}
+
+void Ball::CollisionBall(Ball _b)
+{
+	if ( Vec2(Pos - _b.getPos()).length() < 20 )
+	{
+		Vel = ( Vel + ( Pos - _b.getPos() ) ).normalized();
+		Print << _b.getVel();
+		//_b.setVel( (_b.getVel() + _b.getPos() - Pos).normalized() );
+		_b.setVel(Vec2(0.0,0.0));
+		Print << _b.getVel();
+	}
 }
 
 Vec2 Ball::getPos()
@@ -99,20 +112,21 @@ ColorF Ball::getClr()
 
 void Ball::setPos(Vec2 _p)
 {
-	Pos = _p;
+	this->Pos = _p;
 }
 
 void Ball::setVel(Vec2 _v)
 {
-	Vel = _v;
+	Print << U"call";
+	this->Vel = _v;
 }
 
 void Ball::setSpd(double _s)
 {
-	Spd = _s;
+	this->Spd = _s;
 }
 
 void Ball::setClr(ColorF _c)
 {
-	Clr = _c;
+	this->Clr = _c;
 }

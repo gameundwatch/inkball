@@ -12,7 +12,7 @@ void Main()
 
 	while (System::Update())
 	{
-		ClearPrint();
+		//ClearPrint();
 
 		// [A] キーが押されたら
 		if (KeyA.down())
@@ -37,6 +37,12 @@ void Main()
 
 		for (auto& b : Balls)
 		{
+			for (auto& b2 : Balls)
+			{
+				if (b.getPos() == b2.getPos())
+				{	break;	}
+				b.CollisionBall(b2);
+			}
 			b.MoveBall();
 			b.DrawBall();
 		}
