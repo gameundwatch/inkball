@@ -16,9 +16,9 @@ private:
 public:
 	Ball();
 	Ball(Vec2 _p, Vec2 _v, double _s, int _c);
-	void DrawBall();
-	void MoveBall();
-	void CollisionBall(Ball b);
+	void drawBall();
+	void moveBall();
+	void collisionBall(Ball b);
 
 	Vec2 getPos();
 	Vec2 getVel();
