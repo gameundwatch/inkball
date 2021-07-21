@@ -21,316 +21,316 @@ div.messages { margin: 0 10% 28px; padding 0 0 28px; border: 1px solid; border-c
 <body>
 <h2>inkball(debug) Log</h2>
 <div class="messages">
-<div class="trace">72: CSystem::init()</div>
-<div class="info">73: ℹ️ 2021/7/21 13:23:20</div>
-<div class="info">73: ⌛ Preparing for setup...</div>
-<div class="info">73: ℹ️ Siv3D Engine (Debug build) version 0.4.3 (Windows Desktop)</div>
-<div class="trace">73: CCPU::init()</div>
-<div class="info">73: ℹ️ CPU vendor: AuthenticAMD</div>
-<div class="info">73: ℹ️ CPU name: AMD Ryzen 7 3800X 8-Core Processor             </div>
-<div class="info">74: ℹ️ Instruction set extensions: SSE, SSE2, SSE3, SSSE3, SSE4.1, SSE4.2, SSE4a, AES-NI, SHA, AVX, FMA3, AVX2</div>
-<div class="info">74: ℹ️ CCPU initialized</div>
-<div class="trace">74: CProfiler::init()</div>
-<div class="info">74: ℹ️ CProfiler initialized</div>
-<div class="trace">74: CImageFormat::init()</div>
-<div class="debug">74: Supported image file extensions: bmp, png, jpg, jpeg, gif, ppm, pgm, pbm, pnm, tga, webp</div>
-<div class="info">74: ℹ️ CImageFormat initialized</div>
-<div class="trace">75: CObjectDetection::init()</div>
-<div class="info">78: ℹ️ CObjectDetection initialized</div>
-<div class="trace">78: CWindow::init()</div>
-<div class="trace">78: SetHighDPIAwareness(aware = false)</div>
-<div class="trace">78: DLL::LoadSystemLibrary(library = `user32.dll`)</div>
-<div class="trace">78: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `SetThreadDpiAwarenessContext`) p = 0x7ff85f266c50</div>
-<div class="trace">78: CWindow::registerWindowClass()</div>
-<div class="trace">79: CWindow::createWindow()</div>
-<div class="trace">79: CWindow::m_state.frameSize: (8, 8), CWindow::m_state.titleBarHeight: 23</div>
-<div class="trace">86: DLL::LoadSystemLibrary(library = `User32.dll`)</div>
-<div class="trace">87: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `SetWindowFeedbackSetting`) p = 0x7ff85f284cd0</div>
-<div class="info">87: ℹ️ CWindow initialized</div>
-<div class="trace">87: CCursor::init()</div>
-<div class="info">87: ℹ️ CCursor initialized</div>
-<div class="trace">87: CKeyboard::init()</div>
-<div class="info">87: ℹ️ CKeyboard initialized</div>
-<div class="trace">87: CMouse::init()</div>
-<div class="info">87: ℹ️ CMouse initialized</div>
-<div class="trace">88: CGamepad::init()</div>
-<div class="info">103: ℹ️ Gamepad initialized</div>
-<div class="trace">103: CXInput::init()</div>
-<div class="trace">103: DLL::LoadSystemLibrary(library = `xinput1_4.dll`)</div>
-<div class="trace">104: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `XInputGetState`) p = 0x7ff8492f1750</div>
-<div class="trace">105: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `XInputSetState`) p = 0x7ff8492f19f0</div>
-<div class="info">105: ℹ️ CXInput initialized</div>
-<div class="trace">105: CTextInput::init()</div>
-<div class="info">119: ℹ️ CTextInput initialized</div>
-<div class="trace">120: CTextToSpeech::init()</div>
-<div class="info">126: ℹ️ TextToSpeech available</div>
-<div class="info">127: ℹ️ CTextToSpeech initialized</div>
-<div class="trace">127: CClipboard::init()</div>
-<div class="info">127: ℹ️ CClipboard initialized</div>
-<div class="trace">127: CDragDrop::init()</div>
-<div class="info">133: ℹ️ CDragDrop initialized</div>
-<div class="trace">133: CCodec::init()</div>
-<div class="trace">133: DLL::LoadSystemLibrary(library = `Mfplat.dll`)</div>
-<div class="trace">135: DLL::LoadSystemLibrary(library = `Mf.dll`)</div>
-<div class="trace">136: DLL::LoadSystemLibrary(library = `Mfreadwrite.dll`)</div>
-<div class="trace">137: DLL::GetFunction::GetFunction(name = `MFStartup`) p = 0x7ff8585b3a50</div>
-<div class="trace">137: DLL::GetFunction::GetFunction(name = `MFShutdown`) p = 0x7ff8585b5c20</div>
-<div class="trace">138: DLL::GetFunction::GetFunction(name = `MFCreateTranscodeTopology`) p = 0x7ff8320f2060</div>
-<div class="trace">139: DLL::GetFunction::GetFunction(name = `MFCreateSourceResolver`) p = 0x7ff8585a16d0</div>
-<div class="trace">139: DLL::GetFunction::GetFunction(name = `MFCreateAttributes`) p = 0x7ff8585b37b0</div>
-<div class="trace">139: DLL::GetFunction::GetFunction(name = `MFCreateMediaType`) p = 0x7ff8585ab2f0</div>
-<div class="trace">139: DLL::GetFunction::GetFunction(name = `MFCreateAsyncResult`) p = 0x7ff85844bd70</div>
-<div class="trace">139: DLL::GetFunction::GetFunction(name = `MFInvokeCallback`) p = 0x7ff858441f80</div>
-<div class="trace">139: DLL::GetFunction::GetFunction(name = `MFCreateMemoryBuffer`) p = 0x7ff8585a2980</div>
-<div class="trace">139: DLL::GetFunction::GetFunction(name = `MFCreateSample`) p = 0x7ff8585984c0</div>
-<div class="trace">139: DLL::GetFunction::GetFunction(name = `MFFrameRateToAverageTimePerFrame`) p = 0x7ff858621cf0</div>
-<div class="trace">142: DLL::GetFunction::GetFunction(name = `MFCreateMediaSession`) p = 0x7ff858ad2780</div>
-<div class="trace">142: DLL::GetFunction::GetFunction(name = `MFCreateTranscodeProfile`) p = 0x7ff8320d6d80</div>
-<div class="trace">143: DLL::GetFunction::GetFunction(name = `MFTranscodeGetAudioOutputAvailableTypes`) p = 0x7ff8320f2c90</div>
-<div class="trace">143: DLL::GetFunction::GetFunction(name = `MFGetService`) p = 0x7ff858ac9710</div>
-<div class="trace">143: DLL::GetFunction::GetFunction(name = `MFCreateTopology`) p = 0x7ff858ae4b50</div>
-<div class="trace">143: DLL::GetFunction::GetFunction(name = `MFCreateTopologyNode`) p = 0x7ff858a9f460</div>
-<div class="trace">143: DLL::GetFunction::GetFunction(name = `MFCreateAudioRendererActivate`) p = 0x7ff858af2d20</div>
-<div class="trace">143: DLL::GetFunction::GetFunction(name = `MFCreateVideoRendererActivate`) p = 0x7ff85934b6c0</div>
-<div class="trace">143: DLL::GetFunction::GetFunction(name = `MFCreateSourceReaderFromURL`) p = 0x7ff810da3ce0</div>
-<div class="trace">143: DLL::GetFunction::GetFunction(name = `MFCreateSourceReaderFromByteStream`) p = 0x7ff810da3cb0</div>
-<div class="trace">144: DLL::GetFunction::GetFunction(name = `MFCreateSinkWriterFromURL`) p = 0x7ff810da3b10</div>
-<div class="info">144: ℹ️ Codec_MF initialized</div>
-<div class="trace">144: CAudioFormat::init()</div>
-<div class="info">144: ℹ️ CAudioFormat initialized</div>
-<div class="trace">144: CAudio_X28::init()</div>
-<div class="debug">148: 💠 Created Audio[0(null)]</div>
-<div class="info">148: ℹ️ CAudio_X28 initialized</div>
-<div class="trace">149: CFFT::init()</div>
-<div class="info">149: ℹ️ CFFT initialized</div>
-<div class="trace">150: CNetwork::init()</div>
-<div class="info">150: ℹ️ CNetwork initialized</div>
-<div class="trace">150: CToastNotification::init()</div>
-<div class="info">150: ℹ️ ToastNotification is available</div>
-<div class="info">151: ℹ️ CToastNotification initialized</div>
-<div class="trace">151: CGraphics_D3D11::init()</div>
-<div class="trace">151: D3D11Device::D3D11Device()</div>
-<div class="trace">151: DLL::LoadSystemLibrary(library = `d3d11.dll`)</div>
-<div class="trace">151: DLL::GetFunction::GetFunction(name = `D3D11CreateDevice`) p = 0x7ff85a05fcb0</div>
-<div class="trace">151: DLL::LoadSystemLibrary(library = `dxgi.dll`)</div>
-<div class="trace">151: DLL::GetFunction::GetFunction(name = `CreateDXGIFactory1`) p = 0x7ff85c969f50</div>
-<div class="trace">151: DLL::LoadSystemLibrary(library = `D3D11_1SDKLayers.dll`)</div>
-<div class="info">155: ℹ️ DXGIFactory5 is available</div>
-<div class="trace">155: GetAdapters()</div>
-<div class="info">155: ℹ️ IDXGIAdapter [0]: AMD Radeon RX 5700 XT (Dedicated GPU memory: 7.96GiB, System: 0B, Shared: 16GiB) (supports Direct3D 11.1 runtime)</div>
-<div class="trace">155: CheckHardwareDevice()</div>
-<div class="info">183: ℹ️ - [D3D_DRIVER_TYPE_HARDWARE] selected: D3D_FEATURE_LEVEL_12_1 (max: D3D_FEATURE_LEVEL_12_1)</div>
-<div class="debug">192: ℹ️ IDXGIAdapter [1] is Microsoft Basics Display Driver (skipped)</div>
-<div class="info">193: ℹ️ 1 adapters available</div>
-<div class="trace">193: GetWARPFeatureLevel()</div>
-<div class="info">197: ℹ️ [D3D_DRIVER_TYPE_WARP] supports D3D_FEATURE_LEVEL_11_1</div>
-<div class="trace">197: GetREFFeatureLevel()</div>
-<div class="info">202: ℹ️ [D3D_DRIVER_TYPE_REFERENCE] supports D3D_FEATURE_LEVEL_11_1</div>
-<div class="trace">202: D3D11Device::createDevice(targetDevice = 0, targetAdapterIndex = none, deviceFlags = 2)</div>
-<div class="info">202: ℹ️ selectedAdapterIndex: 0 (AMD Radeon RX 5700 XT)</div>
-<div class="info">227: ✅ D3D11 device created. Driver type: Hardware (D3D_FEATURE_LEVEL_12_1)</div>
-<div class="trace">228: D3D11SwapChain::D3D11SwapChain()</div>
-<div class="trace">228: Use flip model = true</div>
-<div class="trace">228: DLL::LoadSystemLibrary(library = `User32.dll`)</div>
-<div class="trace">228: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `GetDpiForWindow`) p = 0x7ff85f263f40</div>
-<div class="trace">228: IDXGIFactory2::CreateSwapChainForHwnd()</div>
-<div class="trace">229: IDXGIFactory1::MakeWindowAssociation()</div>
-<div class="info">230: Display refresh rate: 144 Hz</div>
-<div class="trace">230: D3D11RenderTarget::D3D11RenderTarget()</div>
-<div class="trace">230: D3D11RenderTarget::m_backBuffer.size = (800, 600)</div>
-<div class="trace">230: CreateRTVFromBackBuffer()</div>
-<div class="trace">230: CreateRenderTarget2D(size = (800, 600), sampleCount = 4)</div>
-<div class="trace">232: CShader_D3D11::init()</div>
-<div class="trace">232: DLL::LoadSystemLibrary(library = `d3dcompiler_47.dll`)</div>
-<div class="info">235: `d3dcompiler_47.dll` found</div>
-<div class="trace">235: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `D3DCompile2`) p = 0x7ff85a372470</div>
-<div class="info">235: HLSL compiler is available</div>
-<div class="debug">235: 💠 Created VertexShader[0(null)]</div>
-<div class="debug">235: 💠 Created PixelShader[0(null)]</div>
-<div class="debug">236: 📤 BinaryReader: Opened resource &quot;/engine/shader/copy.ps&quot; size: 616B</div>
-<div class="debug">236: CShader_D3D11::createVSFromFile(): `/engine/shader/copy.ps` is a precompiled shader file</div>
-<div class="debug">237: 💠 Created PixelShader[1] </div>
-<div class="debug">237: 📥 BinaryReader: Closed resource &quot;/engine/shader/copy.ps&quot;</div>
-<div class="debug">237: 📤 BinaryReader: Opened resource &quot;/engine/shader/gaussian_blur_9.ps&quot; size: 1.36KiB</div>
-<div class="debug">237: CShader_D3D11::createVSFromFile(): `/engine/shader/gaussian_blur_9.ps` is a precompiled shader file</div>
-<div class="debug">237: 💠 Created PixelShader[2] </div>
-<div class="debug">238: 📥 BinaryReader: Closed resource &quot;/engine/shader/gaussian_blur_9.ps&quot;</div>
-<div class="info">238: ℹ️ CShader_D3D11 initialized</div>
-<div class="trace">238: CTexture_D3D11::init()</div>
-<div class="info">238: 4x MSAA support:</div>
-<div class="debug">238: R8G8B8A8_Unorm ✔</div>
-<div class="debug">238: R8G8B8A8_Unorm_SRGB ✔</div>
-<div class="debug">238: R16G16_Float ✔</div>
-<div class="debug">238: R32_Float ✔</div>
-<div class="debug">238: R10G10B10A2_Unorm ✔</div>
-<div class="debug">239: R11G11B10_UFloat ✔</div>
-<div class="debug">239: R16G16B16A16_Float ✔</div>
-<div class="debug">239: R32G32_Float ✔</div>
-<div class="debug">239: R32G32B32A32_Float ✔</div>
-<div class="debug">241: 💠 Created Texture[0(null)]</div>
-<div class="info">241: ℹ️ CTexture_D3D11 initialized</div>
-<div class="trace">241: CRenderer2D_D3D11::init()</div>
-<div class="debug">241: 📤 BinaryReader: Opened resource &quot;/engine/shader/sprite.vs&quot; size: 936B</div>
-<div class="debug">241: CShader_D3D11::createVSFromFile(): `/engine/shader/sprite.vs` is a precompiled shader file</div>
-<div class="debug">242: 💠 Created VertexShader[1] </div>
-<div class="debug">242: 📥 BinaryReader: Closed resource &quot;/engine/shader/sprite.vs&quot;</div>
-<div class="debug">242: 📤 BinaryReader: Opened resource &quot;/engine/shader/fullscreen_triangle_resolve.vs&quot; size: 1KiB</div>
-<div class="debug">242: CShader_D3D11::createVSFromFile(): `/engine/shader/fullscreen_triangle_resolve.vs` is a precompiled shader file</div>
-<div class="debug">243: 💠 Created VertexShader[2] </div>
-<div class="debug">243: 📥 BinaryReader: Closed resource &quot;/engine/shader/fullscreen_triangle_resolve.vs&quot;</div>
-<div class="debug">243: 📤 BinaryReader: Opened resource &quot;/engine/shader/fullscreen_triangle_draw.vs&quot; size: 804B</div>
-<div class="debug">243: CShader_D3D11::createVSFromFile(): `/engine/shader/fullscreen_triangle_draw.vs` is a precompiled shader file</div>
-<div class="debug">244: 💠 Created VertexShader[3] </div>
-<div class="debug">244: 📥 BinaryReader: Closed resource &quot;/engine/shader/fullscreen_triangle_draw.vs&quot;</div>
-<div class="debug">244: 📤 BinaryReader: Opened resource &quot;/engine/shader/shape.ps&quot; size: 708B</div>
-<div class="debug">244: CShader_D3D11::createVSFromFile(): `/engine/shader/shape.ps` is a precompiled shader file</div>
-<div class="debug">244: 💠 Created PixelShader[3] </div>
-<div class="debug">245: 📥 BinaryReader: Closed resource &quot;/engine/shader/shape.ps&quot;</div>
-<div class="debug">245: 📤 BinaryReader: Opened resource &quot;/engine/shader/texture.ps&quot; size: 884B</div>
-<div class="debug">245: CShader_D3D11::createVSFromFile(): `/engine/shader/texture.ps` is a precompiled shader file</div>
-<div class="debug">245: 💠 Created PixelShader[4] </div>
-<div class="debug">245: 📥 BinaryReader: Closed resource &quot;/engine/shader/texture.ps&quot;</div>
-<div class="debug">246: 📤 BinaryReader: Opened resource &quot;/engine/shader/square_dot.ps&quot; size: 1.13KiB</div>
-<div class="debug">246: CShader_D3D11::createVSFromFile(): `/engine/shader/square_dot.ps` is a precompiled shader file</div>
-<div class="debug">246: 💠 Created PixelShader[5] </div>
-<div class="debug">246: 📥 BinaryReader: Closed resource &quot;/engine/shader/square_dot.ps&quot;</div>
-<div class="debug">246: 📤 BinaryReader: Opened resource &quot;/engine/shader/round_dot.ps&quot; size: 1.14KiB</div>
-<div class="debug">246: CShader_D3D11::createVSFromFile(): `/engine/shader/round_dot.ps` is a precompiled shader file</div>
-<div class="debug">247: 💠 Created PixelShader[6] </div>
-<div class="debug">247: 📥 BinaryReader: Closed resource &quot;/engine/shader/round_dot.ps&quot;</div>
-<div class="debug">247: 📤 BinaryReader: Opened resource &quot;/engine/shader/sdf.ps&quot; size: 1.28KiB</div>
-<div class="debug">247: CShader_D3D11::createVSFromFile(): `/engine/shader/sdf.ps` is a precompiled shader file</div>
-<div class="debug">248: 💠 Created PixelShader[7] </div>
-<div class="debug">248: 📥 BinaryReader: Closed resource &quot;/engine/shader/sdf.ps&quot;</div>
-<div class="debug">248: 📤 BinaryReader: Opened resource &quot;/engine/shader/fullscreen_triangle_resolve.ps&quot; size: 872B</div>
-<div class="debug">248: CShader_D3D11::createVSFromFile(): `/engine/shader/fullscreen_triangle_resolve.ps` is a precompiled shader file</div>
-<div class="debug">254: 💠 Created PixelShader[8] </div>
-<div class="debug">254: 📥 BinaryReader: Closed resource &quot;/engine/shader/fullscreen_triangle_resolve.ps&quot;</div>
-<div class="debug">254: 📤 BinaryReader: Opened resource &quot;/engine/shader/fullscreen_triangle_draw.ps&quot; size: 664B</div>
-<div class="debug">254: CShader_D3D11::createVSFromFile(): `/engine/shader/fullscreen_triangle_draw.ps` is a precompiled shader file</div>
-<div class="debug">255: 💠 Created PixelShader[9] </div>
-<div class="debug">255: 📥 BinaryReader: Closed resource &quot;/engine/shader/fullscreen_triangle_draw.ps&quot;</div>
-<div class="debug">257: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/256.png&quot; size: 5.51KiB</div>
-<div class="debug">260: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/256.png&quot;</div>
-<div class="debug">260: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/128.png&quot; size: 2.5KiB</div>
-<div class="debug">261: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/128.png&quot;</div>
-<div class="debug">261: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/64.png&quot; size: 1.34KiB</div>
-<div class="debug">261: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/64.png&quot;</div>
-<div class="debug">262: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/32.png&quot; size: 617B</div>
-<div class="debug">262: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/32.png&quot;</div>
-<div class="debug">262: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/16.png&quot; size: 263B</div>
-<div class="debug">262: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/16.png&quot;</div>
-<div class="debug">262: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/8.png&quot; size: 140B</div>
-<div class="debug">262: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/8.png&quot;</div>
-<div class="debug">263: 💠 Created Texture[1] (type: Normal, size: 256x256, format: R8G8B8A8_Unorm)</div>
-<div class="info">264: ℹ️ CRenderer2D_D3D11 initialized</div>
-<div class="info">264: ℹ️ CGraphics_D3D11 initialized</div>
-<div class="trace">264: CScreenCapture::init()</div>
-<div class="debug">264: Default Screenshot directory: &quot;C:/Users/deq/source/repos/inkball/inkball/App/Screenshot/&quot;</div>
-<div class="info">264: ℹ️ CScreenCapture initialized</div>
-<div class="trace">264: CFont::init()</div>
-<div class="debug">266: 💠 Created Font[0(null)]</div>
-<div class="info">266: ℹ️ CFont initialized</div>
-<div class="trace">266: CSDFFont::init()</div>
-<div class="debug">266: 💠 Created SDFFont[0(null)]</div>
-<div class="info">266: ℹ️ CSDFFont initialized</div>
-<div class="trace">266: CGUI::init()</div>
-<div class="debug">267: 💠 Created Font[1] (`M+ 1p medium` size: 20)</div>
-<div class="info">267: ℹ️ CGUI initialized</div>
-<div class="trace">267: CEffect::init()</div>
-<div class="debug">268: 💠 Created Effect[0(null)]</div>
-<div class="info">268: ℹ️ CEffect initialized</div>
-<div class="trace">268: CPrint::init()</div>
-<div class="debug">268: 💠 Created Font[2] (`M+ 1p medium` size: 16)</div>
-<div class="info">268: ℹ️ CPrint initialized</div>
-<div class="trace">269: CAsset::init()</div>
-<div class="info">269: ℹ️ Asset initialized</div>
-<div class="info">269: ✅ Siv3D engine setup completed</div>
-<div class="trace">269: MainThread</div>
-<hr width="99%"><div class="trace">269: CScript::init()</div>
-<div class="debug">337: 💠 Created Script[0(null)]</div>
-<div class="info">337: ℹ️ CScript initialized</div>
-<div class="trace">337: D3D11RenderTarget::resizeScene(sceneSize = (800, 800))</div>
-<div class="trace">337: CreateRenderTarget2D(size = (800, 800), sampleCount = 4)</div>
-<div class="trace">340: D3D11RenderTarget::resizeScene(sceneSize = (800, 800))</div>
-<div class="trace">340: CWindow::resizeClient(size = (800, 800))</div>
-<div class="trace">355: CWindow::updateWindowBounds(rect = (520, 120, 816, 839))</div>
+<div class="trace">71: CSystem::init()</div>
+<div class="info">71: ℹ️ 2021/7/21 13:53:23</div>
+<div class="info">71: ⌛ Preparing for setup...</div>
+<div class="info">71: ℹ️ Siv3D Engine (Debug build) version 0.4.3 (Windows Desktop)</div>
+<div class="trace">71: CCPU::init()</div>
+<div class="info">72: ℹ️ CPU vendor: AuthenticAMD</div>
+<div class="info">72: ℹ️ CPU name: AMD Ryzen 7 3800X 8-Core Processor             </div>
+<div class="info">72: ℹ️ Instruction set extensions: SSE, SSE2, SSE3, SSSE3, SSE4.1, SSE4.2, SSE4a, AES-NI, SHA, AVX, FMA3, AVX2</div>
+<div class="info">72: ℹ️ CCPU initialized</div>
+<div class="trace">72: CProfiler::init()</div>
+<div class="info">72: ℹ️ CProfiler initialized</div>
+<div class="trace">72: CImageFormat::init()</div>
+<div class="debug">73: Supported image file extensions: bmp, png, jpg, jpeg, gif, ppm, pgm, pbm, pnm, tga, webp</div>
+<div class="info">73: ℹ️ CImageFormat initialized</div>
+<div class="trace">73: CObjectDetection::init()</div>
+<div class="info">76: ℹ️ CObjectDetection initialized</div>
+<div class="trace">76: CWindow::init()</div>
+<div class="trace">76: SetHighDPIAwareness(aware = false)</div>
+<div class="trace">76: DLL::LoadSystemLibrary(library = `user32.dll`)</div>
+<div class="trace">76: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `SetThreadDpiAwarenessContext`) p = 0x7ff85f266c50</div>
+<div class="trace">76: CWindow::registerWindowClass()</div>
+<div class="trace">77: CWindow::createWindow()</div>
+<div class="trace">77: CWindow::m_state.frameSize: (8, 8), CWindow::m_state.titleBarHeight: 23</div>
+<div class="trace">84: DLL::LoadSystemLibrary(library = `User32.dll`)</div>
+<div class="trace">84: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `SetWindowFeedbackSetting`) p = 0x7ff85f284cd0</div>
+<div class="info">85: ℹ️ CWindow initialized</div>
+<div class="trace">85: CCursor::init()</div>
+<div class="info">85: ℹ️ CCursor initialized</div>
+<div class="trace">85: CKeyboard::init()</div>
+<div class="info">85: ℹ️ CKeyboard initialized</div>
+<div class="trace">85: CMouse::init()</div>
+<div class="info">85: ℹ️ CMouse initialized</div>
+<div class="trace">85: CGamepad::init()</div>
+<div class="info">101: ℹ️ Gamepad initialized</div>
+<div class="trace">101: CXInput::init()</div>
+<div class="trace">101: DLL::LoadSystemLibrary(library = `xinput1_4.dll`)</div>
+<div class="trace">102: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `XInputGetState`) p = 0x7ff84b3b1750</div>
+<div class="trace">102: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `XInputSetState`) p = 0x7ff84b3b19f0</div>
+<div class="info">102: ℹ️ CXInput initialized</div>
+<div class="trace">102: CTextInput::init()</div>
+<div class="info">117: ℹ️ CTextInput initialized</div>
+<div class="trace">117: CTextToSpeech::init()</div>
+<div class="info">123: ℹ️ TextToSpeech available</div>
+<div class="info">123: ℹ️ CTextToSpeech initialized</div>
+<div class="trace">124: CClipboard::init()</div>
+<div class="info">124: ℹ️ CClipboard initialized</div>
+<div class="trace">124: CDragDrop::init()</div>
+<div class="info">129: ℹ️ CDragDrop initialized</div>
+<div class="trace">129: CCodec::init()</div>
+<div class="trace">130: DLL::LoadSystemLibrary(library = `Mfplat.dll`)</div>
+<div class="trace">132: DLL::LoadSystemLibrary(library = `Mf.dll`)</div>
+<div class="trace">133: DLL::LoadSystemLibrary(library = `Mfreadwrite.dll`)</div>
+<div class="trace">134: DLL::GetFunction::GetFunction(name = `MFStartup`) p = 0x7ff8585b3a50</div>
+<div class="trace">134: DLL::GetFunction::GetFunction(name = `MFShutdown`) p = 0x7ff8585b5c20</div>
+<div class="trace">135: DLL::GetFunction::GetFunction(name = `MFCreateTranscodeTopology`) p = 0x7ff8320f2060</div>
+<div class="trace">135: DLL::GetFunction::GetFunction(name = `MFCreateSourceResolver`) p = 0x7ff8585a16d0</div>
+<div class="trace">136: DLL::GetFunction::GetFunction(name = `MFCreateAttributes`) p = 0x7ff8585b37b0</div>
+<div class="trace">136: DLL::GetFunction::GetFunction(name = `MFCreateMediaType`) p = 0x7ff8585ab2f0</div>
+<div class="trace">136: DLL::GetFunction::GetFunction(name = `MFCreateAsyncResult`) p = 0x7ff85844bd70</div>
+<div class="trace">136: DLL::GetFunction::GetFunction(name = `MFInvokeCallback`) p = 0x7ff858441f80</div>
+<div class="trace">136: DLL::GetFunction::GetFunction(name = `MFCreateMemoryBuffer`) p = 0x7ff8585a2980</div>
+<div class="trace">136: DLL::GetFunction::GetFunction(name = `MFCreateSample`) p = 0x7ff8585984c0</div>
+<div class="trace">136: DLL::GetFunction::GetFunction(name = `MFFrameRateToAverageTimePerFrame`) p = 0x7ff858621cf0</div>
+<div class="trace">139: DLL::GetFunction::GetFunction(name = `MFCreateMediaSession`) p = 0x7ff858ad2780</div>
+<div class="trace">139: DLL::GetFunction::GetFunction(name = `MFCreateTranscodeProfile`) p = 0x7ff8320d6d80</div>
+<div class="trace">140: DLL::GetFunction::GetFunction(name = `MFTranscodeGetAudioOutputAvailableTypes`) p = 0x7ff8320f2c90</div>
+<div class="trace">140: DLL::GetFunction::GetFunction(name = `MFGetService`) p = 0x7ff858ac9710</div>
+<div class="trace">140: DLL::GetFunction::GetFunction(name = `MFCreateTopology`) p = 0x7ff858ae4b50</div>
+<div class="trace">140: DLL::GetFunction::GetFunction(name = `MFCreateTopologyNode`) p = 0x7ff858a9f460</div>
+<div class="trace">140: DLL::GetFunction::GetFunction(name = `MFCreateAudioRendererActivate`) p = 0x7ff858af2d20</div>
+<div class="trace">140: DLL::GetFunction::GetFunction(name = `MFCreateVideoRendererActivate`) p = 0x7ff85934b6c0</div>
+<div class="trace">140: DLL::GetFunction::GetFunction(name = `MFCreateSourceReaderFromURL`) p = 0x7ff810da3ce0</div>
+<div class="trace">140: DLL::GetFunction::GetFunction(name = `MFCreateSourceReaderFromByteStream`) p = 0x7ff810da3cb0</div>
+<div class="trace">140: DLL::GetFunction::GetFunction(name = `MFCreateSinkWriterFromURL`) p = 0x7ff810da3b10</div>
+<div class="info">141: ℹ️ Codec_MF initialized</div>
+<div class="trace">141: CAudioFormat::init()</div>
+<div class="info">141: ℹ️ CAudioFormat initialized</div>
+<div class="trace">141: CAudio_X28::init()</div>
+<div class="debug">145: 💠 Created Audio[0(null)]</div>
+<div class="info">145: ℹ️ CAudio_X28 initialized</div>
+<div class="trace">146: CFFT::init()</div>
+<div class="info">146: ℹ️ CFFT initialized</div>
+<div class="trace">146: CNetwork::init()</div>
+<div class="info">147: ℹ️ CNetwork initialized</div>
+<div class="trace">147: CToastNotification::init()</div>
+<div class="info">147: ℹ️ ToastNotification is available</div>
+<div class="info">147: ℹ️ CToastNotification initialized</div>
+<div class="trace">148: CGraphics_D3D11::init()</div>
+<div class="trace">148: D3D11Device::D3D11Device()</div>
+<div class="trace">148: DLL::LoadSystemLibrary(library = `d3d11.dll`)</div>
+<div class="trace">148: DLL::GetFunction::GetFunction(name = `D3D11CreateDevice`) p = 0x7ff85a05fcb0</div>
+<div class="trace">148: DLL::LoadSystemLibrary(library = `dxgi.dll`)</div>
+<div class="trace">148: DLL::GetFunction::GetFunction(name = `CreateDXGIFactory1`) p = 0x7ff85c969f50</div>
+<div class="trace">148: DLL::LoadSystemLibrary(library = `D3D11_1SDKLayers.dll`)</div>
+<div class="info">152: ℹ️ DXGIFactory5 is available</div>
+<div class="trace">152: GetAdapters()</div>
+<div class="info">152: ℹ️ IDXGIAdapter [0]: AMD Radeon RX 5700 XT (Dedicated GPU memory: 7.96GiB, System: 0B, Shared: 16GiB) (supports Direct3D 11.1 runtime)</div>
+<div class="trace">152: CheckHardwareDevice()</div>
+<div class="info">179: ℹ️ - [D3D_DRIVER_TYPE_HARDWARE] selected: D3D_FEATURE_LEVEL_12_1 (max: D3D_FEATURE_LEVEL_12_1)</div>
+<div class="debug">188: ℹ️ IDXGIAdapter [1] is Microsoft Basics Display Driver (skipped)</div>
+<div class="info">188: ℹ️ 1 adapters available</div>
+<div class="trace">189: GetWARPFeatureLevel()</div>
+<div class="info">192: ℹ️ [D3D_DRIVER_TYPE_WARP] supports D3D_FEATURE_LEVEL_11_1</div>
+<div class="trace">193: GetREFFeatureLevel()</div>
+<div class="info">197: ℹ️ [D3D_DRIVER_TYPE_REFERENCE] supports D3D_FEATURE_LEVEL_11_1</div>
+<div class="trace">197: D3D11Device::createDevice(targetDevice = 0, targetAdapterIndex = none, deviceFlags = 2)</div>
+<div class="info">197: ℹ️ selectedAdapterIndex: 0 (AMD Radeon RX 5700 XT)</div>
+<div class="info">222: ✅ D3D11 device created. Driver type: Hardware (D3D_FEATURE_LEVEL_12_1)</div>
+<div class="trace">222: D3D11SwapChain::D3D11SwapChain()</div>
+<div class="trace">222: Use flip model = true</div>
+<div class="trace">222: DLL::LoadSystemLibrary(library = `User32.dll`)</div>
+<div class="trace">222: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `GetDpiForWindow`) p = 0x7ff85f263f40</div>
+<div class="trace">222: IDXGIFactory2::CreateSwapChainForHwnd()</div>
+<div class="trace">223: IDXGIFactory1::MakeWindowAssociation()</div>
+<div class="info">224: Display refresh rate: 144 Hz</div>
+<div class="trace">224: D3D11RenderTarget::D3D11RenderTarget()</div>
+<div class="trace">224: D3D11RenderTarget::m_backBuffer.size = (800, 600)</div>
+<div class="trace">224: CreateRTVFromBackBuffer()</div>
+<div class="trace">224: CreateRenderTarget2D(size = (800, 600), sampleCount = 4)</div>
+<div class="trace">226: CShader_D3D11::init()</div>
+<div class="trace">226: DLL::LoadSystemLibrary(library = `d3dcompiler_47.dll`)</div>
+<div class="info">229: `d3dcompiler_47.dll` found</div>
+<div class="trace">229: DLL::GetFunctionNoThrow::GetFunctionNoThrow(name = `D3DCompile2`) p = 0x7ff85a372470</div>
+<div class="info">229: HLSL compiler is available</div>
+<div class="debug">229: 💠 Created VertexShader[0(null)]</div>
+<div class="debug">229: 💠 Created PixelShader[0(null)]</div>
+<div class="debug">229: 📤 BinaryReader: Opened resource &quot;/engine/shader/copy.ps&quot; size: 616B</div>
+<div class="debug">229: CShader_D3D11::createVSFromFile(): `/engine/shader/copy.ps` is a precompiled shader file</div>
+<div class="debug">230: 💠 Created PixelShader[1] </div>
+<div class="debug">230: 📥 BinaryReader: Closed resource &quot;/engine/shader/copy.ps&quot;</div>
+<div class="debug">230: 📤 BinaryReader: Opened resource &quot;/engine/shader/gaussian_blur_9.ps&quot; size: 1.36KiB</div>
+<div class="debug">231: CShader_D3D11::createVSFromFile(): `/engine/shader/gaussian_blur_9.ps` is a precompiled shader file</div>
+<div class="debug">231: 💠 Created PixelShader[2] </div>
+<div class="debug">231: 📥 BinaryReader: Closed resource &quot;/engine/shader/gaussian_blur_9.ps&quot;</div>
+<div class="info">231: ℹ️ CShader_D3D11 initialized</div>
+<div class="trace">231: CTexture_D3D11::init()</div>
+<div class="info">231: 4x MSAA support:</div>
+<div class="debug">232: R8G8B8A8_Unorm ✔</div>
+<div class="debug">232: R8G8B8A8_Unorm_SRGB ✔</div>
+<div class="debug">232: R16G16_Float ✔</div>
+<div class="debug">232: R32_Float ✔</div>
+<div class="debug">232: R10G10B10A2_Unorm ✔</div>
+<div class="debug">232: R11G11B10_UFloat ✔</div>
+<div class="debug">232: R16G16B16A16_Float ✔</div>
+<div class="debug">232: R32G32_Float ✔</div>
+<div class="debug">232: R32G32B32A32_Float ✔</div>
+<div class="debug">234: 💠 Created Texture[0(null)]</div>
+<div class="info">234: ℹ️ CTexture_D3D11 initialized</div>
+<div class="trace">234: CRenderer2D_D3D11::init()</div>
+<div class="debug">235: 📤 BinaryReader: Opened resource &quot;/engine/shader/sprite.vs&quot; size: 936B</div>
+<div class="debug">235: CShader_D3D11::createVSFromFile(): `/engine/shader/sprite.vs` is a precompiled shader file</div>
+<div class="debug">235: 💠 Created VertexShader[1] </div>
+<div class="debug">235: 📥 BinaryReader: Closed resource &quot;/engine/shader/sprite.vs&quot;</div>
+<div class="debug">236: 📤 BinaryReader: Opened resource &quot;/engine/shader/fullscreen_triangle_resolve.vs&quot; size: 1KiB</div>
+<div class="debug">236: CShader_D3D11::createVSFromFile(): `/engine/shader/fullscreen_triangle_resolve.vs` is a precompiled shader file</div>
+<div class="debug">236: 💠 Created VertexShader[2] </div>
+<div class="debug">236: 📥 BinaryReader: Closed resource &quot;/engine/shader/fullscreen_triangle_resolve.vs&quot;</div>
+<div class="debug">236: 📤 BinaryReader: Opened resource &quot;/engine/shader/fullscreen_triangle_draw.vs&quot; size: 804B</div>
+<div class="debug">236: CShader_D3D11::createVSFromFile(): `/engine/shader/fullscreen_triangle_draw.vs` is a precompiled shader file</div>
+<div class="debug">237: 💠 Created VertexShader[3] </div>
+<div class="debug">237: 📥 BinaryReader: Closed resource &quot;/engine/shader/fullscreen_triangle_draw.vs&quot;</div>
+<div class="debug">237: 📤 BinaryReader: Opened resource &quot;/engine/shader/shape.ps&quot; size: 708B</div>
+<div class="debug">237: CShader_D3D11::createVSFromFile(): `/engine/shader/shape.ps` is a precompiled shader file</div>
+<div class="debug">238: 💠 Created PixelShader[3] </div>
+<div class="debug">238: 📥 BinaryReader: Closed resource &quot;/engine/shader/shape.ps&quot;</div>
+<div class="debug">238: 📤 BinaryReader: Opened resource &quot;/engine/shader/texture.ps&quot; size: 884B</div>
+<div class="debug">238: CShader_D3D11::createVSFromFile(): `/engine/shader/texture.ps` is a precompiled shader file</div>
+<div class="debug">239: 💠 Created PixelShader[4] </div>
+<div class="debug">239: 📥 BinaryReader: Closed resource &quot;/engine/shader/texture.ps&quot;</div>
+<div class="debug">239: 📤 BinaryReader: Opened resource &quot;/engine/shader/square_dot.ps&quot; size: 1.13KiB</div>
+<div class="debug">239: CShader_D3D11::createVSFromFile(): `/engine/shader/square_dot.ps` is a precompiled shader file</div>
+<div class="debug">240: 💠 Created PixelShader[5] </div>
+<div class="debug">240: 📥 BinaryReader: Closed resource &quot;/engine/shader/square_dot.ps&quot;</div>
+<div class="debug">240: 📤 BinaryReader: Opened resource &quot;/engine/shader/round_dot.ps&quot; size: 1.14KiB</div>
+<div class="debug">240: CShader_D3D11::createVSFromFile(): `/engine/shader/round_dot.ps` is a precompiled shader file</div>
+<div class="debug">240: 💠 Created PixelShader[6] </div>
+<div class="debug">241: 📥 BinaryReader: Closed resource &quot;/engine/shader/round_dot.ps&quot;</div>
+<div class="debug">241: 📤 BinaryReader: Opened resource &quot;/engine/shader/sdf.ps&quot; size: 1.28KiB</div>
+<div class="debug">241: CShader_D3D11::createVSFromFile(): `/engine/shader/sdf.ps` is a precompiled shader file</div>
+<div class="debug">241: 💠 Created PixelShader[7] </div>
+<div class="debug">241: 📥 BinaryReader: Closed resource &quot;/engine/shader/sdf.ps&quot;</div>
+<div class="debug">242: 📤 BinaryReader: Opened resource &quot;/engine/shader/fullscreen_triangle_resolve.ps&quot; size: 872B</div>
+<div class="debug">242: CShader_D3D11::createVSFromFile(): `/engine/shader/fullscreen_triangle_resolve.ps` is a precompiled shader file</div>
+<div class="debug">247: 💠 Created PixelShader[8] </div>
+<div class="debug">247: 📥 BinaryReader: Closed resource &quot;/engine/shader/fullscreen_triangle_resolve.ps&quot;</div>
+<div class="debug">247: 📤 BinaryReader: Opened resource &quot;/engine/shader/fullscreen_triangle_draw.ps&quot; size: 664B</div>
+<div class="debug">247: CShader_D3D11::createVSFromFile(): `/engine/shader/fullscreen_triangle_draw.ps` is a precompiled shader file</div>
+<div class="debug">247: 💠 Created PixelShader[9] </div>
+<div class="debug">248: 📥 BinaryReader: Closed resource &quot;/engine/shader/fullscreen_triangle_draw.ps&quot;</div>
+<div class="debug">250: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/256.png&quot; size: 5.51KiB</div>
+<div class="debug">253: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/256.png&quot;</div>
+<div class="debug">253: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/128.png&quot; size: 2.5KiB</div>
+<div class="debug">254: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/128.png&quot;</div>
+<div class="debug">254: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/64.png&quot; size: 1.34KiB</div>
+<div class="debug">254: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/64.png&quot;</div>
+<div class="debug">254: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/32.png&quot; size: 617B</div>
+<div class="debug">255: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/32.png&quot;</div>
+<div class="debug">255: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/16.png&quot; size: 263B</div>
+<div class="debug">255: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/16.png&quot;</div>
+<div class="debug">255: 📤 BinaryReader: Opened resource &quot;/engine/texture/box-shadow/8.png&quot; size: 140B</div>
+<div class="debug">255: 📥 BinaryReader: Closed resource &quot;/engine/texture/box-shadow/8.png&quot;</div>
+<div class="debug">256: 💠 Created Texture[1] (type: Normal, size: 256x256, format: R8G8B8A8_Unorm)</div>
+<div class="info">256: ℹ️ CRenderer2D_D3D11 initialized</div>
+<div class="info">256: ℹ️ CGraphics_D3D11 initialized</div>
+<div class="trace">257: CScreenCapture::init()</div>
+<div class="debug">257: Default Screenshot directory: &quot;C:/Users/deq/source/repos/inkball/inkball/App/Screenshot/&quot;</div>
+<div class="info">257: ℹ️ CScreenCapture initialized</div>
+<div class="trace">257: CFont::init()</div>
+<div class="debug">259: 💠 Created Font[0(null)]</div>
+<div class="info">259: ℹ️ CFont initialized</div>
+<div class="trace">259: CSDFFont::init()</div>
+<div class="debug">259: 💠 Created SDFFont[0(null)]</div>
+<div class="info">259: ℹ️ CSDFFont initialized</div>
+<div class="trace">259: CGUI::init()</div>
+<div class="debug">260: 💠 Created Font[1] (`M+ 1p medium` size: 20)</div>
+<div class="info">260: ℹ️ CGUI initialized</div>
+<div class="trace">260: CEffect::init()</div>
+<div class="debug">260: 💠 Created Effect[0(null)]</div>
+<div class="info">260: ℹ️ CEffect initialized</div>
+<div class="trace">261: CPrint::init()</div>
+<div class="debug">261: 💠 Created Font[2] (`M+ 1p medium` size: 16)</div>
+<div class="info">261: ℹ️ CPrint initialized</div>
+<div class="trace">261: CAsset::init()</div>
+<div class="info">261: ℹ️ Asset initialized</div>
+<div class="info">262: ✅ Siv3D engine setup completed</div>
+<div class="trace">262: MainThread</div>
+<hr width="99%"><div class="trace">262: CScript::init()</div>
+<div class="debug">329: 💠 Created Script[0(null)]</div>
+<div class="info">329: ℹ️ CScript initialized</div>
+<div class="trace">330: D3D11RenderTarget::resizeScene(sceneSize = (800, 800))</div>
+<div class="trace">330: CreateRenderTarget2D(size = (800, 800), sampleCount = 4)</div>
+<div class="trace">332: D3D11RenderTarget::resizeScene(sceneSize = (800, 800))</div>
+<div class="trace">332: CWindow::resizeClient(size = (800, 800))</div>
+<div class="trace">346: CWindow::updateWindowBounds(rect = (520, 120, 816, 839))</div>
+<div class="trace">346: WM_SIZE</div>
+<div class="trace">346: CWindow::updateWindowBounds(rect = (520, 120, 816, 839))</div>
+<div class="trace">347: CWindow::requestBackBufferResizing()</div>
+<div class="trace">347: CWindow::m_backBufferResizingRequest = (800, 800)</div>
+<div class="trace">353: WM_PAINT</div>
 <div class="trace">355: WM_SIZE</div>
 <div class="trace">355: CWindow::updateWindowBounds(rect = (520, 120, 816, 839))</div>
 <div class="trace">355: CWindow::requestBackBufferResizing()</div>
 <div class="trace">355: CWindow::m_backBufferResizingRequest = (800, 800)</div>
-<div class="trace">362: WM_PAINT</div>
-<div class="trace">362: WM_SIZE</div>
-<div class="trace">362: CWindow::updateWindowBounds(rect = (520, 120, 816, 839))</div>
-<div class="trace">362: CWindow::requestBackBufferResizing()</div>
-<div class="trace">362: CWindow::m_backBufferResizingRequest = (800, 800)</div>
-<div class="trace">363: CWindow::updateWindowBounds(rect = (520, 120, 816, 839))</div>
-<div class="trace">366: CreateRenderTarget2D(size = (800, 800), sampleCount = 1)</div>
-<div class="trace">372: D3D11RenderTarget::resizeBuffers(backBufferSize = (800, 800), sceneSize = (800, 800))</div>
-<div class="trace">380: D3D11RenderTarget::m_backBuffer.size = (800, 800)</div>
-<div class="trace">380: CreateRTVFromBackBuffer()</div>
-<div class="debug">382: ℹ️ Resized D3D11SpriteBatch::m_vertexArray (size: 4096 -&gt; 8192)</div>
-<div class="trace">4666: WM_CLOSE</div>
-<div class="info">4670: 🚪 System::Update(): `UserAction::CloseButtonClicked` has occurred</div>
-<div class="debug">4671: ♻️ Released Script[0(null)]</div>
-<hr width="99%"><div class="trace">4677: CAsset::~CAsset()</div>
-<div class="trace">4677: CScript::~CScript()</div>
-<div class="trace">4677: CPrint::~CPrint()</div>
-<div class="debug">4677: ♻️ Released Font[2]</div>
-<div class="trace">4677: CEffect::~CEffect()</div>
-<div class="debug">4677: ♻️ Released Effect[0(null)]</div>
-<div class="trace">4678: CGUI::~CGUI()</div>
-<div class="debug">4678: ♻️ Released Font[1]</div>
-<div class="trace">4678: CSDFFont::~CSDFFont()</div>
-<div class="debug">4678: ♻️ Released SDFFont[0(null)]</div>
-<div class="trace">4678: CFont::~CFont()</div>
-<div class="debug">4678: ♻️ Released Font[0(null)]</div>
-<div class="trace">4678: CScreenCapture::~CScreenCapture()</div>
-<div class="trace">4678: CRenderer2D_D3D11::~CRenderer2D_D3D11()</div>
-<div class="debug">4679: ♻️ Released Texture[1]</div>
-<div class="debug">4679: ♻️ Released PixelShader[9]</div>
-<div class="debug">4679: ♻️ Released PixelShader[8]</div>
-<div class="debug">4679: ♻️ Released PixelShader[7]</div>
-<div class="debug">4679: ♻️ Released PixelShader[6]</div>
-<div class="debug">4679: ♻️ Released PixelShader[5]</div>
-<div class="debug">4679: ♻️ Released PixelShader[4]</div>
-<div class="debug">4680: ♻️ Released PixelShader[3]</div>
-<div class="debug">4680: ♻️ Released VertexShader[3]</div>
-<div class="debug">4680: ♻️ Released VertexShader[2]</div>
-<div class="debug">4680: ♻️ Released VertexShader[1]</div>
-<div class="trace">4680: CTexture_D3D11::~CTexture_D3D11()</div>
-<div class="debug">4680: ♻️ Released Texture[0(null)]</div>
-<div class="trace">4680: CShader_D3D11::~CShader_D3D11()</div>
-<div class="debug">4680: ♻️ Released PixelShader[1]</div>
-<div class="debug">4681: ♻️ Released PixelShader[2]</div>
-<div class="debug">4681: ♻️ Released PixelShader[0(null)]</div>
-<div class="debug">4681: ♻️ Released VertexShader[0(null)]</div>
-<div class="trace">4681: CGraphics_D3D11::~CGraphics_D3D11()</div>
-<div class="trace">6790: CToastNotification::~CToastNotification()</div>
-<div class="trace">6790: CNetwork::~CNetwork()</div>
-<div class="trace">6790: CFFT::~CFFT()</div>
-<div class="debug">6793: ♻️ Released Audio[0(null)]</div>
-<div class="trace">6820: CSoundFont::~CSoundFont()</div>
-<div class="trace">6820: CAudioFormat::~CAudioFormat()</div>
-<div class="trace">6820: CCodec::~CCodec()</div>
-<div class="trace">6824: CDragDrop::~CDragDrop()</div>
-<div class="trace">6824: CClipboard::~CClipboard()</div>
-<div class="trace">6824: CTextToSpeech::~CTextToSpeech()</div>
-<div class="trace">6824: CTextInput::~CTextInput()</div>
-<div class="trace">6825: CXInput::~CXInput()</div>
-<div class="trace">6825: CGamepad::~CGamepad()</div>
-<div class="trace">6825: CMouse::~CMouse()</div>
-<div class="trace">6825: CKeyboard::CKeyboard()</div>
-<div class="trace">6825: CCursor::~CCursor()</div>
-<div class="trace">6825: CWindow::~CWindow()</div>
-<div class="trace">6828: WM_DESTROY</div>
-<div class="trace">6831: message.message == WM_QUIT</div>
-<div class="trace">6831: CObjectDetection::~CObjectDetection()</div>
-<div class="trace">6831: CImageFormat::~CImageFormat()</div>
-<div class="trace">6831: CProfiler::~CProfiler()</div>
-<div class="trace">6831: CCPU::~CCPU()</div>
-<div class="info">6837: ✅ Siv3D engine has terminated</div>
-<div class="info">6837: ℹ️ 2021/7/21 13:23:27</div>
+<div class="trace">355: CWindow::updateWindowBounds(rect = (520, 120, 816, 839))</div>
+<div class="trace">358: CreateRenderTarget2D(size = (800, 800), sampleCount = 1)</div>
+<div class="trace">364: D3D11RenderTarget::resizeBuffers(backBufferSize = (800, 800), sceneSize = (800, 800))</div>
+<div class="trace">374: D3D11RenderTarget::m_backBuffer.size = (800, 800)</div>
+<div class="trace">374: CreateRTVFromBackBuffer()</div>
+<div class="debug">376: ℹ️ Resized D3D11SpriteBatch::m_vertexArray (size: 4096 -&gt; 8192)</div>
+<div class="trace">40031: WM_CHAR</div>
+<div class="info">40033: 🚪 System::Update(): `UserAction::EscapeKeyDown` has occurred</div>
+<div class="debug">40033: ♻️ Released Script[0(null)]</div>
+<hr width="99%"><div class="trace">40040: CAsset::~CAsset()</div>
+<div class="trace">40040: CScript::~CScript()</div>
+<div class="trace">40040: CPrint::~CPrint()</div>
+<div class="debug">40040: ♻️ Released Font[2]</div>
+<div class="trace">40040: CEffect::~CEffect()</div>
+<div class="debug">40040: ♻️ Released Effect[0(null)]</div>
+<div class="trace">40040: CGUI::~CGUI()</div>
+<div class="debug">40041: ♻️ Released Font[1]</div>
+<div class="trace">40041: CSDFFont::~CSDFFont()</div>
+<div class="debug">40041: ♻️ Released SDFFont[0(null)]</div>
+<div class="trace">40041: CFont::~CFont()</div>
+<div class="debug">40041: ♻️ Released Font[0(null)]</div>
+<div class="trace">40041: CScreenCapture::~CScreenCapture()</div>
+<div class="trace">40041: CRenderer2D_D3D11::~CRenderer2D_D3D11()</div>
+<div class="debug">40041: ♻️ Released Texture[1]</div>
+<div class="debug">40042: ♻️ Released PixelShader[9]</div>
+<div class="debug">40042: ♻️ Released PixelShader[8]</div>
+<div class="debug">40042: ♻️ Released PixelShader[7]</div>
+<div class="debug">40042: ♻️ Released PixelShader[6]</div>
+<div class="debug">40042: ♻️ Released PixelShader[5]</div>
+<div class="debug">40042: ♻️ Released PixelShader[4]</div>
+<div class="debug">40042: ♻️ Released PixelShader[3]</div>
+<div class="debug">40043: ♻️ Released VertexShader[3]</div>
+<div class="debug">40043: ♻️ Released VertexShader[2]</div>
+<div class="debug">40043: ♻️ Released VertexShader[1]</div>
+<div class="trace">40043: CTexture_D3D11::~CTexture_D3D11()</div>
+<div class="debug">40043: ♻️ Released Texture[0(null)]</div>
+<div class="trace">40043: CShader_D3D11::~CShader_D3D11()</div>
+<div class="debug">40043: ♻️ Released PixelShader[1]</div>
+<div class="debug">40043: ♻️ Released PixelShader[2]</div>
+<div class="debug">40043: ♻️ Released PixelShader[0(null)]</div>
+<div class="debug">40044: ♻️ Released VertexShader[0(null)]</div>
+<div class="trace">40044: CGraphics_D3D11::~CGraphics_D3D11()</div>
+<div class="trace">40070: CToastNotification::~CToastNotification()</div>
+<div class="trace">40070: CNetwork::~CNetwork()</div>
+<div class="trace">40071: CFFT::~CFFT()</div>
+<div class="debug">40075: ♻️ Released Audio[0(null)]</div>
+<div class="trace">40101: CSoundFont::~CSoundFont()</div>
+<div class="trace">40101: CAudioFormat::~CAudioFormat()</div>
+<div class="trace">40101: CCodec::~CCodec()</div>
+<div class="trace">40104: CDragDrop::~CDragDrop()</div>
+<div class="trace">40104: CClipboard::~CClipboard()</div>
+<div class="trace">40104: CTextToSpeech::~CTextToSpeech()</div>
+<div class="trace">40105: CTextInput::~CTextInput()</div>
+<div class="trace">40105: CXInput::~CXInput()</div>
+<div class="trace">40105: CGamepad::~CGamepad()</div>
+<div class="trace">40105: CMouse::~CMouse()</div>
+<div class="trace">40105: CKeyboard::CKeyboard()</div>
+<div class="trace">40105: CCursor::~CCursor()</div>
+<div class="trace">40105: CWindow::~CWindow()</div>
+<div class="trace">40110: WM_DESTROY</div>
+<div class="trace">40115: message.message == WM_QUIT</div>
+<div class="trace">40115: CObjectDetection::~CObjectDetection()</div>
+<div class="trace">40116: CImageFormat::~CImageFormat()</div>
+<div class="trace">40116: CProfiler::~CProfiler()</div>
+<div class="trace">40116: CCPU::~CCPU()</div>
+<div class="info">40125: ✅ Siv3D engine has terminated</div>
+<div class="info">40125: ℹ️ 2021/7/21 13:54:03</div>
 </div>
 </body>
 </html>
