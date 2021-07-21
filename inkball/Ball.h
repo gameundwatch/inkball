@@ -2,6 +2,8 @@
 
 #include <Siv3D.hpp>
 
+#include "Block.h"
+
 class Ball
 {
 
@@ -19,6 +21,7 @@ public:
 	void drawBall();
 	void moveBall();
 	void collisionBall(Ball b);
+	void collisionBlock(Block blk);
 
 	Vec2 getPos();
 	Vec2 getVel();

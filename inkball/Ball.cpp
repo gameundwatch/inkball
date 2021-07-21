@@ -1,6 +1,7 @@
 #include <Siv3D.hpp>
 
 #include "Ball.h"
+#include "Block.h"
 
 Ball::Ball()
 {
@@ -67,8 +68,7 @@ Ball::Ball(Vec2 _p, Vec2 _v, double _s, int _c)
 
 void Ball::drawBall()
 {
-	Body.r = Rad;
-	Body.setPos(Pos);
+	Body.set(Pos, Rad);
 	Body.draw(Clr).drawFrame(2, 0, ColorF(0.5, 0.5, 0.5));
 }
 
@@ -83,6 +83,35 @@ void Ball::collisionBall(Ball _b)
 	if ( Vec2(Pos - _b.getPos()).length() < 20 )
 	{
 		Vel = ( Vel + ( Pos - _b.getPos() ) ).normalized();
+	}
+}
+
+void Ball::collisionBlock(Block blk)
+{
+	Body.set(Pos, Rad);
+	blk.makeBody(blk.getPos());
+
+	if (blk.getType() == 1) {
+
+		/*
+		if (Pos.intersects(blk.getBody()))
+		{
+			(Pos.intersects(blk.getBody().top()) || Pos.intersects(blk.getBody().bottom()) ? Vel.y : Vel.x) *= -1.0;
+		}
+		*/
+
+		if (const auto intersectsPoints = Body.intersectsAt(blk.getBody()))
+		{
+			Vec2 reflect(0.0, 0.0);
+			for (const auto & iPoint : intersectsPoints.value())
+			{
+				reflect += (Pos - iPoint).normalized();
+				Print << reflect;
+			}
+
+			Vel += reflect;
+		}
+
 	}
 }
 

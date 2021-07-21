@@ -3,6 +3,7 @@
 
 # include "Ball.h"
 # include "Block.h"
+// # include "Ink.h"
 
 void Main()
 {
@@ -12,6 +13,7 @@ void Main()
 	Window::Resize(800, 800);
 
 	Array<Ball> Balls;
+	// Array<Ink> Lines;
 	Grid<int>	Stage = {
 		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
@@ -26,9 +28,9 @@ void Main()
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1},
+		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1},
+		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
@@ -41,13 +43,6 @@ void Main()
 	{
 		//ClearPrint();
 
-		// [A] キーが押されたら
-		if (KeyA.down())
-		{
-			// Hello とデバッグ表示する
-			Print << U"Hello!";
-		}
-
 		// ボタンが押されたら
 		if (MouseL.down())
 		{
@@ -59,6 +54,17 @@ void Main()
 			if (!Balls.empty())
 			{
 				Balls.erase(Balls.end() - 1);
+			}
+		}
+
+		//描写
+// ブロック描写
+		for (auto y : step(Stage.height()))
+		{
+			for (auto x : step(Stage.width()))
+			{
+				Block blk(x, y, Stage[x][y]);
+				blk.drawBlock(x, y);
 			}
 		}
 
@@ -75,18 +81,18 @@ void Main()
 				bal.collisionBall(bal2);
 			}
 
+			for (auto y : step(Stage.height()))
+			{
+				for (auto x : step(Stage.width()))
+				{
+					Block blk(x, y, Stage[x][y]);
+					bal.collisionBlock(blk);
+				}
+			}
+
 		}
 
-		//描写
-		// ブロック描写
-		for (auto y : step(Stage.height()))
-		{
-			for (auto x : step(Stage.width()))
-			{
-				Block blk(x, y, Stage[x][y]);
-				blk.drawBlock(x, y);
-			}
-		}
+
 		// ボール描写
 		for (auto& bal : Balls)
 		{
