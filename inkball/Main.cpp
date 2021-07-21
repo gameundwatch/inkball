@@ -3,7 +3,7 @@
 
 # include "Ball.h"
 # include "Block.h"
-// # include "Ink.h"
+# include "Ink.h"
 
 void Main()
 {
@@ -13,7 +13,8 @@ void Main()
 	Window::Resize(800, 800);
 
 	Array<Ball> Balls;
-	// Array<Ink> Lines;
+	Array<Ink>	Lines;
+	Ink Line_temp;
 	Grid<int>	Stage = {
 		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
@@ -35,56 +36,44 @@ void Main()
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-	}
-		
-		; // 40 X 40 rectangle,
+	}; // 40 X 40 rectangle,
 
 	while (System::Update())
 	{
 		//ClearPrint();
 
 		// ボタンが押されたら
-		if (MouseL.down())
-		{
+		if (KeyA.down()){
 			Balls << Ball();
 		}
 
-		if (MouseR.down())
-		{
-			if (!Balls.empty())
-			{
+		if (KeyD.down()){
+			if (!Balls.empty()){
 				Balls.erase(Balls.end() - 1);
 			}
 		}
 
-		//描写
-// ブロック描写
-		for (auto y : step(Stage.height()))
-		{
-			for (auto x : step(Stage.width()))
-			{
-				Block blk(x, y, Stage[x][y]);
-				blk.drawBlock(x, y);
-			}
+		if (MouseL.up()) {
+			Line_temp.setDot(Vec2(Cursor::Pos()));
+			Lines << Line_temp;
+			Line_temp.Clear();
+		}
+		if (MouseL.down()){
+			Line_temp.setDot(Vec2(Cursor::Pos()));
 		}
 
 		// ボール挙動
-		for (auto& bal : Balls)
-		{
+		for (auto& bal : Balls){
 			bal.moveBall();
-			for (auto& bal2 : Balls)
-			{
-				if (bal.getPos() == bal2.getPos())
-				{
+			for (auto& bal2 : Balls){
+				if (bal.getPos() == bal2.getPos()){
 					continue;
 				}
 				bal.collisionBall(bal2);
 			}
 
-			for (auto y : step(Stage.height()))
-			{
-				for (auto x : step(Stage.width()))
-				{
+			for (auto y : step(Stage.height())){
+				for (auto x : step(Stage.width())){
 					Block blk(x, y, Stage[x][y]);
 					bal.collisionBlock(blk);
 				}
@@ -92,11 +81,28 @@ void Main()
 
 		}
 
+		// インク本体
+		for (auto& lin : Lines) {
+			lin.makeLine();
+		}
+
+		//描写
+		// ブロック描写 
+		for (auto y : step(Stage.height())) {
+			for (auto x : step(Stage.width())) {
+				Block blk(x, y, Stage[x][y]);
+				blk.drawBlock(x, y);
+			}
+		}
 
 		// ボール描写
-		for (auto& bal : Balls)
-		{
+		for (auto& bal : Balls) {
 			bal.drawBall();
+		}
+
+		// インク描写
+		for (auto& lin : Lines) {
+			lin.drawLine();
 		}
 
 	}

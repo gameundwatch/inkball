@@ -106,7 +106,6 @@ void Ball::collisionBlock(Block blk)
 			for (const auto & iPoint : intersectsPoints.value())
 			{
 				reflect += (Pos - iPoint).normalized();
-				Print << reflect;
 			}
 
 			Vel += reflect;
@@ -142,7 +141,6 @@ void Ball::setPos(Vec2 _p)
 
 void Ball::setVel(Vec2 _v)
 {
-	Print << U"call";
 	this->Vel = _v;
 }
 
