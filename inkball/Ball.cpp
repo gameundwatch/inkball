@@ -2,6 +2,7 @@
 
 #include "Ball.h"
 #include "Block.h"
+#include "Ink.h"
 
 Ball::Ball()
 {
@@ -112,6 +113,29 @@ void Ball::collisionBlock(Block blk)
 		}
 
 	}
+}
+
+bool Ball::collisionHall(int y, int x) {
+	// Print << (Pos - Vec2(20 + 40 * x, 20 + 40 * y)).length();
+	if (((Pos - Vec2(20 + 40 * x, 20 + 40 * y)).length()) < 40.0) {
+		return true;
+	}
+	return false;
+}
+
+bool Ball::collisionLine(Ink i) {
+	Body.set(Pos, Rad);
+	if (const auto intersectsPoints = Body.intersectsAt(i.getBody()))
+	{
+		Vec2 reflect(0.0, 0.0);
+		for (const auto& iPoint : intersectsPoints.value())
+		{
+			reflect += (Pos - iPoint).normalized();
+		}
+		Vel += reflect;
+		return true;
+	}
+	return false;
 }
 
 Vec2 Ball::getPos()

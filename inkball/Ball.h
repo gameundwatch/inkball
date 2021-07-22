@@ -3,6 +3,7 @@
 #include <Siv3D.hpp>
 
 #include "Block.h"
+#include "Ink.h"
 
 class Ball
 {
@@ -22,6 +23,8 @@ public:
 	void moveBall();
 	void collisionBall(Ball b);
 	void collisionBlock(Block blk);
+	bool collisionHall(int y, int x);
+	bool collisionLine(Ink i);
 
 	Vec2 getPos();
 	Vec2 getVel();

@@ -11,6 +11,7 @@ void Ink::makeLine() {
 void Ink::drawLine() {
 	Body.draw(8, ColorF(0.1, 0.1, 0.1));
 }
+
 void Ink::Clear() {
 	Dots.clear();
 	Body.clear();
@@ -18,4 +19,8 @@ void Ink::Clear() {
 
 void Ink::setDot(Vec2 v) {
 	Dots.push_back(v);
+}
+
+LineString Ink::getBody() {
+	return Body;
 }

@@ -19,12 +19,13 @@ void Main()
 		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		{1,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		{1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		{1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		{1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12,0,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
@@ -32,7 +33,6 @@ void Main()
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1},
-		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
@@ -47,23 +47,28 @@ void Main()
 			Balls << Ball();
 		}
 
-		if (KeyD.down()){
-			if (!Balls.empty()){
-				Balls.erase(Balls.end() - 1);
-			}
+		if (KeyD.down() && !Balls.isEmpty()){
+			Balls.erase(Balls.end() - 1);
 		}
 
-		if (MouseL.up()) {
-			Line_temp.setDot(Vec2(Cursor::Pos()));
-			Lines << Line_temp;
-			Line_temp.Clear();
+		if (Key0.down() && !Lines.isEmpty()) {
+			Lines.erase(Lines.end() -1);
 		}
-		if (MouseL.down()){
-			Line_temp.setDot(Vec2(Cursor::Pos()));
+
+		if (Lines.size() < 3){
+			if (MouseL.up()) {
+				Line_temp.setDot(Vec2(Cursor::Pos()));
+				Lines << Line_temp;
+				Line_temp.Clear();
+			}
+			if (MouseL.down()) {
+				Line_temp.setDot(Vec2(Cursor::Pos()));
+			}
 		}
 
 		// ボール挙動
 		for (auto& bal : Balls){
+			int ballcount = 0;
 			bal.moveBall();
 			for (auto& bal2 : Balls){
 				if (bal.getPos() == bal2.getPos()){
@@ -71,14 +76,31 @@ void Main()
 				}
 				bal.collisionBall(bal2);
 			}
-
+			
 			for (auto y : step(Stage.height())){
 				for (auto x : step(Stage.width())){
-					Block blk(x, y, Stage[x][y]);
+					Block blk(y, x, Stage[y][x]);
 					bal.collisionBlock(blk);
+					
+					if ( Stage[y][x] >= 10 ) {
+						blk.setHall(y,x);
+						if (bal.collisionHall(y, x)) {
+							Balls.erase(Balls.begin() + ballcount);
+							break;
+						}
+					}
+					
 				}
 			}
+			
 
+			for (auto l : Lines) {
+				if (bal.collisionLine(l)){
+					Lines.erase(Lines.end() - 1);
+					break;
+				}
+			}
+			ballcount++;
 		}
 
 		// インク本体
@@ -90,8 +112,8 @@ void Main()
 		// ブロック描写 
 		for (auto y : step(Stage.height())) {
 			for (auto x : step(Stage.width())) {
-				Block blk(x, y, Stage[x][y]);
-				blk.drawBlock(x, y);
+				Block blk(y, x, Stage[y][x]);
+				blk.drawBlock(y, x);
 			}
 		}
 

@@ -14,5 +14,6 @@ public:
 	void drawLine();
 	void Clear();
 	void setDot(Vec2 v);
+	LineString getBody();
 };
 
