@@ -94,13 +94,6 @@ void Ball::collisionBlock(Block blk)
 
 	if (blk.getType() == 1) {
 
-		/*
-		if (Pos.intersects(blk.getBody()))
-		{
-			(Pos.intersects(blk.getBody().top()) || Pos.intersects(blk.getBody().bottom()) ? Vel.y : Vel.x) *= -1.0;
-		}
-		*/
-
 		if (const auto intersectsPoints = Body.intersectsAt(blk.getBody()))
 		{
 			Vec2 reflect(0.0, 0.0);
@@ -115,9 +108,10 @@ void Ball::collisionBlock(Block blk)
 	}
 }
 
+
 bool Ball::collisionHall(int y, int x) {
 	// Print << (Pos - Vec2(20 + 40 * x, 20 + 40 * y)).length();
-	if (((Pos - Vec2(20 + 40 * x, 20 + 40 * y)).length()) < 40.0) {
+	if (((Pos - Vec2(20 + 40 * x, 20 + 40 * y)).length()) < 20.0) {
 		return true;
 	}
 	return false;

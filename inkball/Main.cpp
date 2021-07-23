@@ -67,41 +67,49 @@ void Main()
 		}
 
 		// ボール挙動
-		for (auto& bal : Balls){
-			int ballcount = 0;
-			bal.moveBall();
+		for (auto bal = Balls.begin(); bal != Balls.end(); ++bal) {
+			bal->moveBall();
 			for (auto& bal2 : Balls){
-				if (bal.getPos() == bal2.getPos()){
+				if (bal->getPos() == bal2.getPos()){
 					continue;
 				}
-				bal.collisionBall(bal2);
+				bal->collisionBall(bal2);
 			}
 			
 			for (auto y : step(Stage.height())){
 				for (auto x : step(Stage.width())){
 					Block blk(y, x, Stage[y][x]);
-					bal.collisionBlock(blk);
-					
-					if ( Stage[y][x] >= 10 ) {
-						blk.setHall(y,x);
-						if (bal.collisionHall(y, x)) {
-							Balls.erase(Balls.begin() + ballcount);
-							break;
-						}
-					}
-					
+					bal->collisionBlock(blk);
 				}
 			}
-			
-
-			for (auto l : Lines) {
-				if (bal.collisionLine(l)){
-					Lines.erase(Lines.end() - 1);
+			for (auto lin = Lines.begin(); lin != Lines.end(); ++lin ) {
+				if (bal->collisionLine( *lin )){
+					Lines.erase(lin);
 					break;
 				}
 			}
-			ballcount++;
 		}
+		
+		
+		for (auto bal = Balls.begin() ; bal != Balls.end() ; )
+		{
+			for (auto y : step(Stage.height())) {
+				for (auto x : step(Stage.width())) {
+					Block blk(y, x, Stage[y][x]);
+					if (Stage[y][x] >= 10) {
+						blk.setHall(y, x);
+						if (bal->collisionHall(y, x)) {
+							bal = Balls.erase(bal);
+						}
+						else {
+							bal++;
+						}
+					}
+				}
+			}
+		}
+
+		
 
 		// インク本体
 		for (auto& lin : Lines) {
