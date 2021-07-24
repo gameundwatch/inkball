@@ -12,7 +12,7 @@ void Main()
 	Scene::Resize(800, 800);
 	Window::Resize(800, 800);
 
-	Font ui_score(40);
+	Font ui_score(20, U"fonts/PixelMplus10-Regular.ttf");
 	Font ui_text(20);
 
 	Array<Ball> Balls;
@@ -84,7 +84,9 @@ void Main()
 			if (Lines.size() < 3) {
 				if (MouseL.up()) {
 					Line_temp.setDot(Vec2(Cursor::Pos()));
-					Lines << Line_temp;
+					if (Line_temp.getLength() > 40.0) {
+						Lines << Line_temp;
+					}
 					Line_temp.Clear();
 				}
 				if (MouseL.down()) {
@@ -171,13 +173,18 @@ void Main()
 			lin.drawLine();
 		}
 
+		// 線の始点の描写
+		if (MouseL.pressed() && !Line_temp.isEmpty()) {
+			Line_temp.drawPoint(Line_temp.get1st());
+		}
+
 		// ui表示
 		if (wait) {
 			ui_text(U"LEFT CLICK TO START.").drawAt(Scene::Center(), ColorF(0.2, 0.2, 0.2, 0.5 + Periodic::Sine0_1(1s) * 0.5));
 		}
 		else {
 			// スコア表示
-			ui_score(score).draw(20, 20, Color(40, 40, 40));
+			ui_score(score).draw(10, 10, Color(40, 40, 40));
 		}
 	}
 }

@@ -69,7 +69,7 @@ Ball::Ball(Vec2 _p, Vec2 _v, double _s, int _c)
 void Ball::drawBall()
 {
 	Body.set(Pos, Rad);
-	Body.draw(Clr).drawFrame(2, 0, ColorF(0.5, 0.5, 0.5));
+	Body.drawShadow(Vec2(4, 4), 8, 1).draw(Clr).drawFrame(1, 0, ColorF(0.5, 0.5, 0.5));
 }
 
 //É{Å[ÉãÇÃìÆçÏ
