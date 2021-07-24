@@ -60,7 +60,6 @@ Ball::Ball(Vec2 _p, Vec2 _v, double _s, int _c)
 	case 4:
 		Clr = ColorF(0.6, 0.6, 0.2);
 		break;
-
 	default:
 		Clr = ColorF(0.0, 0.0, 0.0);
 		break;
@@ -73,12 +72,14 @@ void Ball::drawBall()
 	Body.draw(Clr).drawFrame(2, 0, ColorF(0.5, 0.5, 0.5));
 }
 
+//ボールの動作
 void Ball::moveBall()
 {
 	Vel = Vel.normalized();
 	Pos += Vel * Spd;
 }
 
+// ボール同士の衝突
 void Ball::collisionBall(Ball _b)
 {
 	if ( Vec2(Pos - _b.getPos()).length() < 20 )
@@ -87,6 +88,7 @@ void Ball::collisionBall(Ball _b)
 	}
 }
 
+// ボールとブロックとの衝突
 void Ball::collisionBlock(Block blk)
 {
 	Body.set(Pos, Rad);
@@ -108,14 +110,23 @@ void Ball::collisionBlock(Block blk)
 	}
 }
 
-
+// ボールが穴に入る
 bool Ball::collisionHall(int y, int x) {
 	// Print << (Pos - Vec2(20 + 40 * x, 20 + 40 * y)).length();
-	if (((Pos - Vec2(20 + 40 * x, 20 + 40 * y)).length()) < 20.0) {
+	if (((Pos - Vec2(20 + 40 * x, 20 + 40 * y)).length()) < 10.0) {
 		return true;
 	}
 	return false;
 }
+
+// ボールが穴に引き寄せられる
+void Ball::attractHall(int y, int x) {
+	if (((Pos - Vec2(20 + 40 * x, 20 + 40 * y)).length()) < 40.0) {
+		Vel += (Vec2(20 + 40 * x, 20 + 40 * y) - Pos).normalized() * 0.02;
+	}
+}
+
+// ボールと線の衝突
 
 bool Ball::collisionLine(Ink i) {
 	Body.set(Pos, Rad);
@@ -131,6 +142,34 @@ bool Ball::collisionLine(Ink i) {
 	}
 	return false;
 }
+
+// スコア加点
+int Ball::addScore(Block blk) {
+	if (Clr == ColorF(0.8, 0.4, 0.0) && blk.getType() == 12) {
+		// Red
+		return 100;
+	} 
+	else if (Clr == ColorF(0.4, 0.4, 0.6) && blk.getType() == 13)	{
+		// Blue
+		return 200;
+	} 
+	else if (Clr == ColorF(0.2, 0.6, 0.2) && blk.getType() == 14) {
+		// Green
+		return 400;
+	} 
+	else if (Clr == ColorF(0.6, 0.6, 0.2) && blk.getType() == 15) {
+		// Yellow
+		return 1000;
+	} 
+	else if (Clr == ColorF(0.8, 0.8, 0.8) || blk.getType() == 11) {
+		// White
+		return 0;
+	}
+	else {
+		return -1;
+	}
+}
+
 
 Vec2 Ball::getPos()
 {

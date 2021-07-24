@@ -23,12 +23,41 @@ void Block::drawBlock(int x,int y) {
 		Body.setPos(40 * y, 40 * x);
 		switch (Type)
 		{
-		case 12:
+			
+		case 11:
 			// hall
-			Body.draw(ColorF(0.8, 0.4, 0.0)).drawFrame(1, 0, ColorF(0.8, 0.4, 0.0));
+			Body.draw(ColorF(0.8, 0.8, 0.8)).drawFrame(1, 0, ColorF(0.6, 0.6, 0.6));
 			Hall.set(Vec2(20 + 40 * y, 20 + 40 * x), 12.5);
 			Hall.draw(ColorF(0.1, 0.1, 0.1));
 			break;
+		
+		case 12:
+			// hall
+			Body.draw(ColorF(0.8, 0.4, 0.0)).drawFrame(1, 0, ColorF(0.6, 0.6, 0.6));
+			Hall.set(Vec2(20 + 40 * y, 20 + 40 * x), 12.5);
+			Hall.draw(ColorF(0.1, 0.1, 0.1));
+			break;
+			
+		case 13:
+			// hall
+			Body.draw(ColorF(0.4, 0.4, 0.6)).drawFrame(1, 0, ColorF(0.6, 0.6, 0.6));
+			Hall.set(Vec2(20 + 40 * y, 20 + 40 * x), 12.5);
+			Hall.draw(ColorF(0.1, 0.1, 0.1));
+			break;
+
+		case 14:
+			// hall
+			Body.draw(ColorF(0.2, 0.6, 0.2)).drawFrame(1, 0, ColorF(0.6, 0.6, 0.6));
+			Hall.set(Vec2(20 + 40 * y, 20 + 40 * x), 12.5);
+			Hall.draw(ColorF(0.1, 0.1, 0.1));
+			break;
+		case 15:
+			// hall
+			Body.draw(ColorF(0.6, 0.6, 0.2)).drawFrame(1, 0, ColorF(0.6, 0.6, 0.6));
+			Hall.set(Vec2(20 + 40 * y, 20 + 40 * x), 12.5);
+			Hall.draw(ColorF(0.1, 0.1, 0.1));
+			break;
+		
 		default:
 			break;
 		}

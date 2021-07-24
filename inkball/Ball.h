@@ -23,8 +23,11 @@ public:
 	void moveBall();
 	void collisionBall(Ball b);
 	void collisionBlock(Block blk);
+	void attractHall(int y, int x);
 	bool collisionHall(int y, int x);
 	bool collisionLine(Ink i);
+
+	int addScore(Block blk);
 
 	Vec2 getPos();
 	Vec2 getVel();
