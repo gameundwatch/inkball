@@ -77,9 +77,9 @@ void Main()
 
 			// ボタンが押されたら
 
-			if (KeyA.down()) {
-				score+= 1000;
-			}
+	//		if (KeyA.down()) {
+	//			score+= 1000;
+	//		}
 
 	//		if (KeyD.down() && !Balls.isEmpty()) {
 	//			Balls.erase(Balls.end() - 1);
@@ -99,7 +99,7 @@ void Main()
 					ballwait -= 1;
 				}
 				if (ballwait == 0) {
-					Balls << Ball(SpawnPoint, Vec2(Random(-1.0, 1.0), Random(-1.0, 1.0)), 1.0, Random(0, 4));
+					Balls << Ball(SpawnPoint, Vec2(Random(-1.0, 1.0), Random(-1.0, 1.0)), 1.0, Random(1, 4));
 					ballwait = 1000 / level;
 				}
 			}
@@ -173,16 +173,12 @@ void Main()
 			for (auto& lin : Lines) {
 				lin.makeLine();
 			}
-
-
-
 		}
+
 		else if (scene == 2) {
-		
-		if (MouseL.down()) {
-			scene = 1;
-		}
-
+			if (MouseL.down()) {
+				scene = 1;
+			}
 		}
 
 
@@ -214,6 +210,13 @@ void Main()
 		if (scene == 1) {
 			// 待機
 			ui_text(U"LEFT CLICK TO START.").drawAt(Scene::Center(), ColorF(0.2, 0.2, 0.2, 0.5 + Periodic::Sine0_1(1s) * 0.5));
+			ui_text(U"操作方法").draw(120, 480, ColorF(0.2, 0.2, 0.2));
+			ui_text(U"左クリック長押しして離すことで線を引きます。").draw(120, 500, ColorF(0.2, 0.2, 0.2));
+			ui_text(U"引いた線は右クリックで新しい順に消されます。").draw(120, 520, ColorF(0.2, 0.2, 0.2));
+			ui_text(U"引いた線にボールが当たると反発します。").draw(120, 540, ColorF(0.2, 0.2, 0.2));
+			ui_text(U"ボールを同じ色の穴に入れましょう。").draw(120, 560, ColorF(0.2, 0.2, 0.2));
+			ui_text(U"違う色の穴に入れるとゲームオーバーです。").draw(120, 580, ColorF(0.2, 0.2, 0.2));
+
 		}
 		else if (scene == 0) {
 			// ゲーム
