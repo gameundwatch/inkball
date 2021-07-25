@@ -14,9 +14,11 @@ void Main()
 
 	Font ui_score(20, U"fonts/PixelMplus10-Regular.ttf");
 	Font ui_text(20);
+	Font ui_result(40, U"fonts/PixelMplus10-Regular.ttf");
 
 	Array<Ball> Balls;
 	Array<Ink>	Lines;
+
 	Ink Line_temp;
 	Grid<int>	Stage = {
 		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
@@ -40,18 +42,23 @@ void Main()
 		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 	}; // 40 X 40 rectangle,
+	Vec2 SpawnPoint = Vec2(400, 400);
 
 	int score = 0;
-	bool wait = true;
+	int scene = 1;
+	int level = 1;
+	int ballwait = 0;
 
 	while (System::Update())
 	{
-		// ClearPrint();
+		ClearPrint();
 
 		// システム
-		if (wait) {
+		if (scene == 1) {
 			// 待機状態
 			score = 0;
+			level = 1;
+			ballwait = 0;
 			if (!Balls.empty()) {
 				Balls.clear();
 			}
@@ -62,23 +69,39 @@ void Main()
 				Balls.clear();
 			}
 			if (MouseL.down()) {
-				wait = false;
+				scene = 0;
 			}
 		}
-		else {
+		else if (scene == 0){
 		// ゲーム中
 
 			// ボタンが押されたら
+
 			if (KeyA.down()) {
-				Balls << Ball();
+				score+= 1000;
 			}
 
-			if (KeyD.down() && !Balls.isEmpty()) {
-				Balls.erase(Balls.end() - 1);
+	//		if (KeyD.down() && !Balls.isEmpty()) {
+	//			Balls.erase(Balls.end() - 1);
+	//		}
+
+			if (level < 10) {
+				level = (score / 2000) + 1;
 			}
 
 			if (MouseR.down() && !Lines.isEmpty()) {
 				Lines.erase(Lines.end() - 1);
+			}
+
+			if (Balls.size() < level + 2) {
+
+				if (ballwait > 0) {
+					ballwait -= 1;
+				}
+				if (ballwait == 0) {
+					Balls << Ball(SpawnPoint, Vec2(Random(-1.0, 1.0), Random(-1.0, 1.0)), 1.0, Random(0, 4));
+					ballwait = 1000 / level;
+				}
 			}
 
 			if (Lines.size() < 3) {
@@ -133,7 +156,7 @@ void Main()
 									score += bal->addScore(blk);
 								}
 								else {
-									wait = true;
+									scene = 2;
 								}
 							bal = Balls.erase(bal);
 							}
@@ -150,6 +173,15 @@ void Main()
 			for (auto& lin : Lines) {
 				lin.makeLine();
 			}
+
+
+
+		}
+		else if (scene == 2) {
+		
+		if (MouseL.down()) {
+			scene = 1;
+		}
 
 		}
 
@@ -179,12 +211,25 @@ void Main()
 		}
 
 		// ui表示
-		if (wait) {
+		if (scene == 1) {
+			// 待機
 			ui_text(U"LEFT CLICK TO START.").drawAt(Scene::Center(), ColorF(0.2, 0.2, 0.2, 0.5 + Periodic::Sine0_1(1s) * 0.5));
 		}
-		else {
+		else if (scene == 0) {
+			// ゲーム
+			// 
+			if (ballwait <= 100) {
+				Circle(SpawnPoint, ballwait*ballwait /100 ).drawFrame(0, 1, Palette::Darkgreen);
+			}
 			// スコア表示
-			ui_score(score).draw(10, 10, Color(40, 40, 40));
+			ui_score(U"SCORE").draw(10, 5, Color(40, 40, 40));
+			ui_score(score).draw(10, 25, Color(40, 40, 40));
+		}
+		else if (scene == 2) {
+			// リザルト
+			ui_result(U"GAME OVER").drawAt(Scene::Center() + Vec2(0, -20), Color(40, 40, 40));
+			ui_result(score).drawAt(Scene::Center() + Vec2(0, 20), Color(40, 40, 40));
+			ui_text(U"LEFT CLICK TO BACK.").drawAt(Scene::Center() + Vec2(0, 60), ColorF(0.2, 0.2, 0.2, 0.5 + Periodic::Sine0_1(1s) * 0.5));
 		}
 	}
 }
